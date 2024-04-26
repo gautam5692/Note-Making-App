@@ -1,0 +1,206 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#body {
+  padding: 10px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  padding: 10px;
+  background-color: #fff9cf;
+}
+
+header p,
+h1 {
+  font-family: cursive;
+}
+
+main {
+  padding: 20px;
+}
+
+#add-icon {
+  border: 2px solid black;
+  height: 70px;
+  width: 70px;
+  font-size: 50px;
+  font-weight: 200px;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+#input-container,
+#title-input-container {
+  display: grid;
+  grid-template-columns: 80%;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  width: 100%;
+  right: 0;
+  bottom: 20px;
+  z-index: 1;
+}
+
+#input-container textarea {
+  height: 200px;
+  padding: 10px;
+  box-shadow: 0 0 50px black;
+  font-family: Arial;
+}
+
+#title-input-container input {
+  padding: 10px;
+  box-shadow: 0 0 50px black;
+  font-family: Arial;
+}
+
+#input-container div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 20px;
+  padding: 20px;
+}
+
+#title-input-container div {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 20px;
+  padding: 20px;
+}
+
+#save,
+#ok,
+#cancel,
+#close {
+  background-color: green;
+  color: white;
+  border: none;
+  height: 40px;
+  width: 100px;
+  cursor: pointer;
+}
+
+#cancel,
+#close {
+  background-color: red;
+}
+
+.my-note {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  position: relative;
+  margin-top: 30px;
+  padding: 15px;
+  box-shadow: 10px -10px 10px grey;
+  border-radius: 10px;
+}
+
+.note-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.note-buttons {
+  border: none;
+  padding: 5px;
+  width: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#preview {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+}
+
+#information {
+  display: grid;
+  grid-template-columns: 100%;
+  width: 100%;
+  z-index: 1;  
+  box-shadow: 0 0 50px black;
+  padding: 20px 50px;
+}
+
+#information #read-title {
+  overflow: auto;
+  max-height: 100px;
+}
+
+#information #read-description {
+  max-height: 400px;
+  overflow: auto;
+  border: 1px solid grey;
+  padding: 10px;
+}
+
+#information #read-description pre {
+  font-family: "Times New Roman";
+}
+
+/*To make the input container zoom-in animation*/
+.zoom-in {
+  animation: zoomIn 0.3s ease forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.zoom-out {
+  animation: zoomOut 0.3s ease forwards;
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 15px;
+  }
+  .my-note {
+    grid-template-columns: 100%;
+    grid-template-rows: 50px 50px;
+    padding: 5px 10px;
+    text-align: center;
+  }
+}
